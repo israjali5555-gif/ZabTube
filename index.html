@@ -1,1 +1,250 @@
+<!DOCTYPE html><html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VideoTube - YouTube Style App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }body {
+  background: #0f0f0f;
+  color: white;
+}
 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #0f0f0f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid #222;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.logo span {
+  color: #ff0000;
+}
+
+.search-box {
+  flex: 1;
+  max-width: 600px;
+  margin: 0 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 30px;
+  border: 1px solid #333;
+  background: #121212;
+  color: white;
+  outline: none;
+}
+
+.btn {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 30px;
+  background: #ff0000;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.login-btn {
+  background: #ffffff;
+  color: #111;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: calc(100vh - 70px);
+}
+
+aside {
+  background: #111;
+  padding: 20px;
+  border-right: 1px solid #222;
+}
+
+aside ul {
+  list-style: none;
+}
+
+aside li {
+  padding: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-bottom: 8px;
+  transition: 0.3s;
+}
+
+aside li:hover {
+  background: #222;
+}
+
+main {
+  padding: 20px;
+}
+
+.categories {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.chip {
+  background: #222;
+  padding: 10px 18px;
+  border-radius: 12px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #181818;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: 0.3s;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+iframe {
+  width: 100%;
+  height: 220px;
+  border: none;
+}
+
+.card-content {
+  padding: 14px;
+}
+
+.card-content h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.meta {
+  color: #aaa;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  aside {
+    display: none;
+  }
+
+  .search-box {
+    display: none;
+  }
+}
+
+  </style>
+</head>
+<body><header>
+  <div class="logo">
+    <span>▶</span> VideoTube
+  </div>  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search videos...">
+    <button class="btn" onclick="searchVideos()">Search</button>
+  </div><button class="btn login-btn" onclick="googleLogin()">Google Login</button>
+
+</header><div class="container">
+  <aside>
+    <ul>
+      <li>🏠 Home</li>
+      <li>🔥 Trending</li>
+      <li>🎵 Music</li>
+      <li>🎬 Movies</li>
+      <li>📺 Subscriptions</li>
+      <li>📚 Library</li>
+      <li>⏱ Watch Later</li>
+      <li>👍 Liked Videos</li>
+    </ul>
+  </aside>  <main>
+    <div class="categories">
+      <div class="chip">All</div>
+      <div class="chip">Music</div>
+      <div class="chip">Gaming</div>
+      <div class="chip">Movies</div>
+      <div class="chip">News</div>
+      <div class="chip">Live</div>
+      <div class="chip">Education</div>
+    </div><div class="videos" id="videoContainer">
+
+  <div class="card">
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+    <div class="card-content">
+      <h3>Featured Video Demo</h3>
+      <div class="meta">Free Library Video • Demo Channel</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <iframe src="https://www.youtube.com/embed/ysz5S6PUM-U" allowfullscreen></iframe>
+    <div class="card-content">
+      <h3>Beautiful Nature Video</h3>
+      <div class="meta">Nature Channel • HD Quality</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw" allowfullscreen></iframe>
+    <div class="card-content">
+      <h3>Classic Public Video</h3>
+      <div class="meta">Open Library • Public Content</div>
+    </div>
+  </div>
+
+</div>
+
+  </main>
+</div><script>
+  function googleLogin() {
+    alert("Google Login integration ke liye Google OAuth API key aur backend setup zaroori hota hai. Yeh UI ready hai.");
+  }
+
+  function searchVideos() {
+    const query = document.getElementById('searchInput').value;
+
+    if (!query.trim()) {
+      alert('Please enter video name');
+      return;
+    }
+
+    alert('Search for: ' + query + '\nYouTube Data API connect karke real videos fetch ki ja sakti hain.');
+  }
+</script></body>
+</html>
