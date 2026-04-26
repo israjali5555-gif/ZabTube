@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Library - ZabTube</title>
+  <title>Subscriptions - ZabTube</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -40,7 +40,7 @@ h1 {
   font-size: 14px;
 }
 
-.grid {
+.channels {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
@@ -53,37 +53,37 @@ h1 {
   padding: 24px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
   transition: 0.3s;
-  cursor: pointer;
 }
 
 .card:hover {
   transform: translateY(-5px);
 }
 
-.icon {
-  font-size: 32px;
+.avatar {
+  font-size: 36px;
   margin-bottom: 14px;
 }
 
 .card h3 {
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .card p {
   color: #aaa;
   font-size: 14px;
   line-height: 1.6;
+  margin-bottom: 14px;
 }
 
-@media (max-width: 768px) {
-  h1 {
-    font-size: 24px;
-  }
-
-  .card {
-    padding: 18px;
-  }
+.btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 12px;
+  background: #ff0000;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
 }
 
   </style>
@@ -91,43 +91,35 @@ h1 {
 <body>  <div class="header">
     <div class="logo">
       <span>▶</span> ZabTube
-    </div><h1>Your Library</h1>
-<div class="subtitle">Manage your saved videos, history and playlists</div>
+    </div><h1>Your Subscriptions</h1>
+<div class="subtitle">Latest updates from your favorite creators</div>
 
-  </div>  <div class="grid"><div class="card">
-  <div class="icon">⏱</div>
-  <h3>Watch History</h3>
-  <p>See all videos you watched recently and continue from where you left.</p>
+  </div>  <div class="channels"><div class="card">
+  <div class="avatar">🎵</div>
+  <h3>Music Channel</h3>
+  <p>Latest songs, trending music videos and live performances updates.</p>
+  <button class="btn">Subscribed</button>
 </div>
 
 <div class="card">
-  <div class="icon">👍</div>
-  <h3>Liked Videos</h3>
-  <p>All your liked videos are saved here for quick access anytime.</p>
+  <div class="avatar">🎮</div>
+  <h3>Gaming Zone</h3>
+  <p>Gaming livestreams, walkthroughs and new gameplay uploads daily.</p>
+  <button class="btn">Subscribed</button>
 </div>
 
 <div class="card">
-  <div class="icon">📌</div>
-  <h3>Saved Videos</h3>
-  <p>Keep your favorite videos saved and watch them later easily.</p>
+  <div class="avatar">🎬</div>
+  <h3>Movie Updates</h3>
+  <p>Trailers, reviews and latest cinema news from top entertainment creators.</p>
+  <button class="btn">Subscribed</button>
 </div>
 
 <div class="card">
-  <div class="icon">📚</div>
-  <h3>Playlists</h3>
-  <p>Create and manage your custom playlists like YouTube premium users.</p>
-</div>
-
-<div class="card">
-  <div class="icon">🎬</div>
-  <h3>Watch Later</h3>
-  <p>Videos you want to watch later are organized in one place.</p>
-</div>
-
-<div class="card">
-  <div class="icon">📺</div>
-  <h3>Your Channel</h3>
-  <p>Access your uploaded content, profile settings and creator dashboard.</p>
+  <div class="avatar">📚</div>
+  <h3>Education Hub</h3>
+  <p>Learning videos, tutorials and educational premium content updates.</p>
+  <button class="btn">Subscribed</button>
 </div>
 
   </div></body>
