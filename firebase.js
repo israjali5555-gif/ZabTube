@@ -12,8 +12,9 @@ function checkUserSession() { console.log("Checking existing user session..."); 
 
 window.addEventListener("load", function () { initializeFirebase(); checkUserSession(); });
 
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AiZaSyChWz8PoMxQtgeCWpu...", 
+  apiKey: "AIzaSyChWz8PoMxQtgeCWpu0o7lYgZkxqN6oD1s",
   authDomain: "zabtube-e81d6.firebaseapp.com",
   projectId: "zabtube-e81d6",
   storageBucket: "zabtube-e81d6.firebasestorage.app",
