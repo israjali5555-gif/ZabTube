@@ -8,7 +8,9 @@ const firebaseConfig = {
   measurementId: "G-G4L1HW8X9Z"
 };
 
-firebase.initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
 
 function signInWithGoogle() {
   const provider = new firebase.auth.GoogleAuthProvider();
@@ -18,14 +20,10 @@ function signInWithGoogle() {
     .then((result) => {
       const user = result.user;
 
-      // user data save
-      localStorage.setItem("userName", user.displayName || "User");
-      localStorage.setItem("userEmail", user.email || "");
-
       alert("Login Successful: " + user.email);
 
-      // direct home page
-      window.location.href = "../index.html";
+      // login ke baad home page
+      window.location.href = "index.html";
     })
     .catch((error) => {
       console.log("Login Error:", error);
@@ -34,15 +32,15 @@ function signInWithGoogle() {
 }
 
 function logoutUser() {
-  firebase.auth().signOut()
+  firebase.auth()
+    .signOut()
     .then(() => {
-      localStorage.removeItem("userName");
-      localStorage.removeItem("userEmail");
-
       alert("Logout Successful");
+
+      // logout ke baad page refresh
       location.reload();
     })
     .catch((error) => {
-      console.log(error);
+      console.log("Logout Error:", error);
     });
 }
