@@ -179,7 +179,7 @@ iframe {
   </div>  <div class="search-box">
     <input type="text" id="searchInput" placeholder="Search videos...">
     <button class="btn login-btn" onclick="signInWithGoogle()">Google Login</button>
-  </div><button class="btn login-btn" onclick="googleLogin()">Google Login</button>
+  </div><button class="btn login-btn" onclick="signInWithGoogle()()">Google Login</button>
 
 </header><div class="container">
   <aside>
@@ -232,14 +232,6 @@ iframe {
 
   </main>
 </div><script>
-
-  function searchVideos() {
-    const query = document.getElementById('searchInput').value;
-
-    if (!query.trim()) {
-      alert('Please enter video name');
-      return;
-    }
 
     alert('Search for: ' + query + '\nYouTube Data API connect karke real videos fetch ki ja sakti hain.');
   }
