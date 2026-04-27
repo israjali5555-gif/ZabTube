@@ -19,22 +19,23 @@ function signInWithGoogle() {
       const user = result.user;
 
       alert("Login Successful: " + user.email);
-      console.log("User Logged In:", user);
+
+      localStorage.setItem("userName", user.displayName);
+      localStorage.setItem("userEmail", user.email);
+
+      window.location.href = "../index.html";
     })
     .catch((error) => {
-      console.log("Login Error:", error);
+      console.log(error);
       alert("Login Failed");
     });
 }
 
 function logoutUser() {
-  firebase.auth()
-    .signOut()
+  firebase.auth().signOut()
     .then(() => {
+      localStorage.clear();
       alert("Logout Successful");
-      console.log("User Logged Out");
-    })
-    .catch((error) => {
-      console.log("Logout Error:", error);
+      location.reload();
     });
 }
