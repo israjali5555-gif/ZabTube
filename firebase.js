@@ -25,7 +25,7 @@ function signInWithGoogle() {
       alert("Login Successful: " + user.email);
 
       // direct home page
-      window.location.href = "index.html";
+      window.location.href = "../index.html";
     })
     .catch((error) => {
       console.log("Login Error:", error);
