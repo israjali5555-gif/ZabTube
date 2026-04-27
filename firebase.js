@@ -18,15 +18,17 @@ function signInWithGoogle() {
     .then((result) => {
       const user = result.user;
 
+      // user data save
+      localStorage.setItem("userName", user.displayName || "User");
+      localStorage.setItem("userEmail", user.email || "");
+
       alert("Login Successful: " + user.email);
 
-      localStorage.setItem("userName", user.displayName);
-      localStorage.setItem("userEmail", user.email);
-
-      window.location.href = "../index.html";
+      // direct home page
+      window.location.href = "index.html";
     })
     .catch((error) => {
-      console.log(error);
+      console.log("Login Error:", error);
       alert("Login Failed");
     });
 }
@@ -34,8 +36,13 @@ function signInWithGoogle() {
 function logoutUser() {
   firebase.auth().signOut()
     .then(() => {
-      localStorage.clear();
+      localStorage.removeItem("userName");
+      localStorage.removeItem("userEmail");
+
       alert("Logout Successful");
       location.reload();
+    })
+    .catch((error) => {
+      console.log(error);
     });
 }
