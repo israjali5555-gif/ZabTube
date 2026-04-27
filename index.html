@@ -260,16 +260,11 @@
 
   </main>
 </div>
-
-<script>
-window.addEventListener("load", function () {
-  const userName = localStorage.getItem("userName");
-  const userEmail = localStorage.getItem("userEmail");
-
-  if (userName && userEmail) {
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
     document.getElementById("user-info").innerHTML = `
-      <h2>Welcome, ${userName}</h2>
-      <p>${userEmail}</p>
+      <h2>Welcome, ${user.displayName}</h2>
+      <p>${user.email}</p>
       <br>
       <button class="btn" onclick="logoutUser()">Logout</button>
     `;
