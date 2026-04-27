@@ -1,5 +1,3 @@
-function googleLogin() { alert("Google Login setup next step me Firebase + Google OAuth ke saath connect hoga."); }
-
 function searchVideo() { const input = document.getElementById("searchInput"); const query = input ? input.value.trim() : "";
 
 if (!query) { alert("Please enter video name"); return; }
