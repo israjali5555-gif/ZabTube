@@ -1,5 +1,5 @@
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
+  apiKey: "AIzaSyChWz8PoMxQtgeCWpu0o7lYgZkxqN6oD1s",
   authDomain: "zabtube-e81d6.firebaseapp.com",
   projectId: "zabtube-e81d6",
   storageBucket: "zabtube-e81d6.appspot.com",
@@ -19,10 +19,10 @@ function signInWithGoogle() {
       const user = result.user;
 
       alert("Login Successful: " + user.email);
-      console.log(user);
+      console.log("User Logged In:", user);
     })
     .catch((error) => {
-      console.log(error);
+      console.log("Login Error:", error);
       alert("Login Failed");
     });
 }
@@ -32,5 +32,9 @@ function logoutUser() {
     .signOut()
     .then(() => {
       alert("Logout Successful");
+      console.log("User Logged Out");
+    })
+    .catch((error) => {
+      console.log("Logout Error:", error);
     });
 }
