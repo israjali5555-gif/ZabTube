@@ -29,3 +29,16 @@ container.appendChild(card);
 }); }
 
 window.onload = function () { loadVideos(); };
+
+window.addEventListener("load", function () {
+  const userName = localStorage.getItem("userName");
+  const userEmail = localStorage.getItem("userEmail");
+
+  if (userName && userEmail) {
+    document.getElementById("user-info").innerHTML = `
+      <h3>Welcome, ${userName}</h3>
+      <p>${userEmail}</p>
+      <button onclick="logoutUser()">Logout</button>
+    `;
+  }
+});
