@@ -2,10 +2,12 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZABTUBE History</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>ZABTUBE</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -18,252 +20,358 @@
 body{
   background:#0f0f0f;
   color:#fff;
+  overflow-x:hidden;
 }
+
+/* HEADER */
 
 header{
   position:sticky;
   top:0;
   z-index:999;
   background:#0f0f0f;
-  border-bottom:1px solid #222;
-  padding:14px 20px;
+  padding:14px 16px;
+  border-bottom:1px solid #1f1f1f;
+}
+
+.top-bar{
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:12px;
 }
 
 .logo{
   display:flex;
   align-items:center;
   gap:10px;
-  font-size:24px;
+  font-size:28px;
   font-weight:700;
-  cursor:pointer;
 }
 
 .logo span{
   color:#ff0000;
 }
 
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:30px 20px;
-}
-
-.page-title{
-  font-size:30px;
-  font-weight:700;
-  margin-bottom:25px;
-}
-
-.top-actions{
+.header-icons{
   display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:15px;
-  margin-bottom:30px;
+  gap:16px;
+  font-size:22px;
 }
 
-.btn{
-  padding:12px 22px;
-  border:none;
-  border-radius:30px;
+.icon{
   cursor:pointer;
-  font-weight:600;
 }
 
-.clear-btn{
-  background:#ff0000;
-  color:#fff;
-}
+/* SEARCH */
 
-.back-btn{
-  background:#fff;
-  color:#111;
-}
-
-.history-list{
+.search-wrap{
+  margin-top:14px;
   display:flex;
-  flex-direction:column;
-  gap:20px;
+  gap:10px;
 }
 
-.history-card{
+.search-wrap input{
+  flex:1;
+  height:46px;
+  border:none;
+  outline:none;
+  border-radius:30px;
+  padding:0 18px;
+  background:#181818;
+  color:#fff;
+  font-size:15px;
+  border:1px solid #2a2a2a;
+}
+
+.search-btn{
+  width:52px;
+  border:none;
+  border-radius:50%;
+  background:#181818;
+  color:#fff;
+  font-size:20px;
+  cursor:pointer;
+  border:1px solid #2a2a2a;
+}
+
+/* USER BOX */
+
+#user-info{
+  margin:18px 16px;
   background:#181818;
   border-radius:18px;
   padding:18px;
+}
+
+.profile-box{
   display:flex;
-  gap:18px;
-  align-items:flex-start;
-  cursor:pointer;
-  transition:0.3s;
+  align-items:center;
+  gap:14px;
 }
 
-.history-card:hover{
-  transform:translateY(-4px);
-}
-
-.thumb{
-  width:280px;
-  min-width:280px;
-  height:160px;
+.profile-img{
+  width:52px;
+  height:52px;
+  border-radius:50%;
   object-fit:cover;
-  border-radius:14px;
 }
 
-.history-content{
-  flex:1;
+.logout-btn{
+  margin-top:8px;
+  padding:10px 18px;
+  border:none;
+  border-radius:30px;
+  background:#ff0000;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
 }
 
-.history-content h3{
-  font-size:20px;
-  margin-bottom:10px;
+/* CATEGORY */
+
+.categories{
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  padding:0 16px 10px;
+}
+
+.categories::-webkit-scrollbar{
+  display:none;
+}
+
+.chip{
+  min-width:max-content;
+  padding:10px 16px;
+  background:#1f1f1f;
+  border-radius:12px;
+  font-size:14px;
+}
+
+/* VIDEOS */
+
+.videos{
+  padding:0 16px 100px;
+}
+
+.card{
+  margin-bottom:28px;
+  cursor:pointer;
+}
+
+.thumbnail{
+  position:relative;
+  border-radius:18px;
+  overflow:hidden;
+}
+
+.thumbnail img{
+  width:100%;
+  height:210px;
+  object-fit:cover;
+  display:block;
+}
+
+.duration{
+  position:absolute;
+  right:10px;
+  bottom:10px;
+  background:rgba(0,0,0,0.8);
+  padding:4px 8px;
+  border-radius:8px;
+  font-size:12px;
+  font-weight:600;
+}
+
+.card-content{
+  display:flex;
+  gap:12px;
+  margin-top:12px;
+}
+
+.channel-img{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.video-info h3{
+  font-size:16px;
+  font-weight:600;
+  line-height:1.4;
 }
 
 .meta{
-  color:#aaa;
-  font-size:14px;
-  line-height:1.7;
-  margin-bottom:10px;
+  margin-top:6px;
+  font-size:13px;
+  color:#aaaaaa;
+  line-height:1.5;
 }
 
-.desc{
-  color:#ccc;
-  line-height:1.7;
+/* BOTTOM NAV */
+
+.bottom-nav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#0f0f0f;
+  border-top:1px solid #1f1f1f;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  padding:10px 0;
+  z-index:999;
 }
 
-.empty-box{
+.nav-item{
   text-align:center;
-  padding:70px 20px;
-  background:#181818;
-  border-radius:20px;
+  font-size:12px;
+  color:#fff;
+  cursor:pointer;
 }
 
-.empty-box h2{
-  margin-bottom:10px;
+.nav-icon{
+  font-size:22px;
+  margin-bottom:4px;
 }
 
-@media(max-width:850px){
-  .history-card{
-    flex-direction:column;
-  }
-
-  .thumb{
-    width:100%;
-    min-width:100%;
-    height:auto;
-  }
+.upload-btn{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  background:#fff;
+  color:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  font-weight:700;
 }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo" onclick="window.location.href='index.html'">
-    <span>▶</span> ZABTUBE
-  </div>
+
+<div class="top-bar">
+
+<div class="logo">
+<span>▶</span> ZABTUBE
+</div>
+
+<div class="header-icons">
+<div class="icon">🔔</div>
+<div class="icon">🔍</div>
+</div>
+
+</div>
+
+<div class="search-wrap">
+<input
+type="text"
+id="searchInput"
+placeholder="Search videos...">
+
+<button class="search-btn"
+onclick="searchVideo()">
+⌕
+</button>
+</div>
+
 </header>
 
-<div class="container">
-
-<div class="page-title">
-📜 Watch History
+<div id="user-info">
+<h3>Please Login With Google</h3>
 </div>
 
-<div class="top-actions">
+<div class="categories">
+<div class="chip">All</div>
+<div class="chip">Music</div>
+<div class="chip">Gaming</div>
+<div class="chip">Movies</div>
+<div class="chip">Live</div>
+<div class="chip">Education</div>
+<div class="chip">News</div>
+</div>
 
-<button class="btn back-btn"
+<div class="videos" id="videoContainer">
+
+<!-- script.js se load hoga -->
+
+</div>
+
+<div class="bottom-nav">
+
+<div class="nav-item"
 onclick="window.location.href='index.html'">
-Back Home
-</button>
-
-<button class="btn clear-btn"
-onclick="clearHistory()">
-Clear History
-</button>
-
+<div class="nav-icon">⌂</div>
+Home
 </div>
 
-<div class="history-list" id="historyList">
-
-<div class="history-card"
-onclick="window.location.href='video.html'">
-
-  <img
-  class="thumb"
-  src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg">
-
-  <div class="history-content">
-    <h3>Featured Demo Video Full HD Quality</h3>
-
-    <div class="meta">
-      Demo Channel • Watched 2 hours ago • 2.1M views
-    </div>
-
-    <div class="desc">
-      Continue watching your favorite featured premium content on ZABTUBE with full HD quality and creator experience.
-    </div>
-  </div>
+<div class="nav-item"
+onclick="window.location.href='shorts.html'">
+<div class="nav-icon">▶</div>
+Shorts
 </div>
 
-<div class="history-card"
-onclick="window.location.href='video.html'">
-
-  <img
-  class="thumb"
-  src="https://i.ytimg.com/vi/ysz5S6PUM-U/hqdefault.jpg">
-
-  <div class="history-content">
-    <h3>Beautiful Nature Relaxing Video</h3>
-
-    <div class="meta">
-      Nature Channel • Watched yesterday • 980K views
-    </div>
-
-    <div class="desc">
-      Relaxing nature video with beautiful landscapes and peaceful cinematic visuals.
-    </div>
-  </div>
+<div class="nav-item"
+onclick="window.location.href='upload.html'">
+<div class="upload-btn">+</div>
 </div>
 
-<div class="history-card"
-onclick="window.location.href='video.html'">
+<div class="nav-item"
+onclick="window.location.href='subscriptions.html'">
+<div class="nav-icon">▣</div>
+Subs
+</div>
 
-  <img
-  class="thumb"
-  src="https://i.ytimg.com/vi/jNQXAC9IVRw/hqdefault.jpg">
-
-  <div class="history-content">
-    <h3>Classic Public Library Video</h3>
-
-    <div class="meta">
-      Open Library • Watched 3 days ago • 4.7M views
-    </div>
-
-    <div class="desc">
-      Public classic library video content with premium viewing experience on ZABTUBE.
-    </div>
-  </div>
+<div class="nav-item"
+onclick="window.location.href='channel.html'">
+<div class="nav-icon">◉</div>
+You
 </div>
 
 </div>
 
-</div>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="firebase.js"></script>
+<script src="script.js"></script>
 
 <script>
-function clearHistory() {
-  const historyList =
-    document.getElementById("historyList");
+window.onload = function () {
 
-  historyList.innerHTML = `
-    <div class="empty-box">
-      <h2>No Watch History Found</h2>
-      <p>Your watch history has been cleared successfully 🔥</p>
-    </div>
-  `;
-}
+  loadVideos();
+
+  firebase.auth().onAuthStateChanged(function(user) {
+    const userBox = document.getElementById("user-info");
+
+    if (!userBox) return;
+
+    if (user) {
+      userBox.innerHTML = `
+        <div class="profile-box">
+          <img class="profile-img" src="${user.photoURL}">
+          <div>
+            <h2>${user.displayName}</h2>
+            <p>${user.email}</p>
+            <button class="logout-btn"
+            onclick="logoutUser()">
+            Logout
+            </button>
+          </div>
+        </div>
+      `;
+    } else {
+      userBox.innerHTML = `
+        <h3>Please Login With Google</h3>
+      `;
+    }
+  });
+};
 </script>
 
 </body>
