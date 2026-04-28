@@ -18,6 +18,7 @@
 body{
   background:#0f0f0f;
   color:#fff;
+  padding-bottom:90px;
 }
 
 header{
@@ -122,6 +123,13 @@ main{
   padding:20px;
 }
 
+#user-info{
+  background:#181818;
+  padding:16px;
+  border-radius:18px;
+  margin-bottom:20px;
+}
+
 .categories{
   display:flex;
   gap:10px;
@@ -195,17 +203,48 @@ main{
   line-height:1.5;
 }
 
-#user-info{
-  background:#181818;
-  padding:16px;
-  border-radius:18px;
-  margin-bottom:20px;
-}
-
 .logout-btn{
   margin-top:10px;
   background:#ff0000;
   color:#fff;
+}
+
+/* Bottom Navigation */
+
+.bottom-nav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#111;
+  border-top:1px solid #222;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  padding:10px 0;
+  z-index:999;
+}
+
+.nav-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  font-size:13px;
+  cursor:pointer;
+  color:#fff;
+}
+
+.add-btn{
+  background:#fff;
+  color:#111;
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  font-weight:700;
 }
 
 @media(max-width:900px){
@@ -226,25 +265,23 @@ main{
 <body>
 
 <header>
+  <div class="logo">
+    <span>▶</span> ZABTUBE
+  </div>
 
-<div class="logo">
-  <span>▶</span> ZABTUBE
-</div>
-
-<div class="search-box">
-  <input type="text" placeholder="Search videos...">
-  <button class="btn login-btn" onclick="signInWithGoogle()">
-    Google Login
-  </button>
-</div>
-
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search videos...">
+    <button class="btn login-btn" onclick="signInWithGoogle()">
+      Google Login
+    </button>
+  </div>
 </header>
 
 <div class="container">
 
 <aside>
 <ul>
-<li>🏠 Home</li>
+<li onclick="window.location.href='index.html'">🏠 Home</li>
 <li>🔥 Trending</li>
 <li>🎵 Music</li>
 <li>🎬 Movies</li>
@@ -252,7 +289,7 @@ main{
 <li>📚 Library</li>
 <li>⏱ Watch Later</li>
 <li>👍 Liked Videos</li>
-<li>🎬 Shorts</li>
+<li onclick="window.location.href='shorts.html'">🎬 Shorts</li>
 </ul>
 </aside>
 
@@ -263,102 +300,79 @@ main{
 </div>
 
 <div class="categories">
-<div class="chip">All</div>
-<div class="chip">Music</div>
-<div class="chip">Gaming</div>
-<div class="chip">Movies</div>
-<div class="chip">Live</div>
-<div class="chip">Education</div>
-<div class="chip">News</div>
+  <div class="chip">All</div>
+  <div class="chip">Music</div>
+  <div class="chip">Gaming</div>
+  <div class="chip">Movies</div>
+  <div class="chip">Live</div>
+  <div class="chip">Education</div>
+  <div class="chip">News</div>
 </div>
 
-<div class="videos">
-
-<div class="card" onclick="window.location.href='video.html'">
-  <div class="thumbnail">
-    <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg">
-    <div class="duration">10:25</div>
-  </div>
-
-  <div class="card-content">
-    <img class="channel-img" src="https://i.pravatar.cc/100?img=1">
-    <div class="video-info">
-      <h3>Featured Demo Video Full HD Quality</h3>
-      <div class="meta">
-        Demo Channel • 2.1M views • 2 days ago
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="card" onclick="window.location.href='video.html'">
-  <div class="thumbnail">
-    <img src="https://i.ytimg.com/vi/ysz5S6PUM-U/hqdefault.jpg">
-    <div class="duration">08:40</div>
-  </div>
-
-  <div class="card-content">
-    <img class="channel-img" src="https://i.pravatar.cc/100?img=2">
-    <div class="video-info">
-      <h3>Beautiful Nature Relaxing Video</h3>
-      <div class="meta">
-        Nature Channel • 980K views • 1 week ago
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="card" onclick="window.location.href='video.html'">
-  <div class="thumbnail">
-    <img src="https://i.ytimg.com/vi/jNQXAC9IVRw/hqdefault.jpg">
-    <div class="duration">12:14</div>
-  </div>
-
-  <div class="card-content">
-    <img class="channel-img" src="https://i.pravatar.cc/100?img=3">
-    <div class="video-info">
-      <h3>Classic Public Library Video</h3>
-      <div class="meta">
-        Open Library • 4.7M views • 5 days ago
-      </div>
-    </div>
-  </div>
-</div>
-
+<div class="videos" id="videoContainer">
 </div>
 
 </main>
 </div>
 
+<!-- Bottom Navigation -->
+
+<div class="bottom-nav">
+
+<div class="nav-item" onclick="window.location.href='index.html'">
+🏠
+<span>Home</span>
+</div>
+
+<div class="nav-item" onclick="window.location.href='shorts.html'">
+🎬
+<span>Shorts</span>
+</div>
+
+<div class="add-btn" onclick="window.location.href='upload.html'">
++
+</div>
+
+<div class="nav-item">
+📺
+<span>Subs</span>
+</div>
+
+<div class="nav-item" onclick="window.location.href='channel.html'">
+👤
+<span>You</span>
+</div>
+
+</div>
+
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 <script src="firebase.js"></script>
+<script src="script.js"></script>
 
 <script>
-window.onload = function () {
-  firebase.auth().onAuthStateChanged(function(user) {
-    const userBox = document.getElementById("user-info");
+firebase.auth().onAuthStateChanged(function(user) {
+  const userBox = document.getElementById("user-info");
 
-    if (!userBox) return;
+  if (!userBox) return;
 
-    if (user) {
-      userBox.innerHTML = `
-        <div class="profile-box">
-          <img class="profile-img" src="${user.photoURL}">
-          <div>
-            <h2>Welcome, ${user.displayName}</h2>
-            <p>${user.email}</p>
-            <button class="btn logout-btn" onclick="logoutUser()">Logout</button>
-          </div>
+  if (user) {
+    userBox.innerHTML = `
+      <div class="profile-box">
+        <img class="profile-img" src="${user.photoURL}">
+        <div>
+          <h2>Welcome, ${user.displayName}</h2>
+          <p>${user.email}</p>
+          <button class="btn logout-btn" onclick="logoutUser()">Logout</button>
         </div>
-      `;
-    } else {
-      userBox.innerHTML = `
-        <h3>Please Login With Google</h3>
-      `;
-    }
-  });
-};
+      </div>
+    `;
+  } else {
+    userBox.innerHTML = `
+      <h3>Please Login With Google</h3>
+    `;
+  }
+});
 </script>
 
 </body>
