@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZABTUBE Shorts</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#000;
+  color:#fff;
+  overflow:hidden;
+}
+
+.shorts-container{
+  height:100vh;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+}
+
+.video-box{
+  position:relative;
+  width:380px;
+  max-width:100%;
+  height:100vh;
+  overflow:hidden;
+}
+
+.video-box video,
+.video-box iframe{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border:none;
+}
+
+.overlay{
+  position:absolute;
+  bottom:20px;
+  left:20px;
+  right:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+}
+
+.left-info{
+  max-width:70%;
+}
+
+.channel-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:12px;
+}
+
+.channel-row img{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.subscribe-btn{
+  padding:8px 16px;
+  border:none;
+  border-radius:30px;
+  background:#fff;
+  color:#111;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.video-desc{
+  font-size:14px;
+  line-height:1.6;
+}
+
+.right-actions{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  align-items:center;
+}
+
+.action{
+  text-align:center;
+  cursor:pointer;
+}
+
+.action-icon{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.15);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  margin-bottom:6px;
+}
+
+.action span{
+  font-size:12px;
+}
+
+.top-bar{
+  position:absolute;
+  top:20px;
+  left:20px;
+  z-index:999;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.back-btn{
+  font-size:24px;
+  cursor:pointer;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:700;
+}
+
+.logo span{
+  color:#ff0000;
+}
+
+@media(max-width:500px){
+  .video-box{
+    width:100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="back-btn" onclick="window.location.href='index.html'">
+    ←
+  </div>
+
+  <div class="logo">
+    <span>▶</span> ZABTUBE Shorts
+  </div>
+</div>
+
+<div class="shorts-container">
+
+  <div class="video-box">
+
+    <iframe 
+      src="https://www.youtube.com/embed/ysz5S6PUM-U?autoplay=1&mute=1"
+      allowfullscreen>
+    </iframe>
+
+    <div class="overlay">
+
+      <div class="left-info">
+
+        <div class="channel-row">
+          <img src="https://i.pravatar.cc/100?img=4">
+
+          <div>
+            <strong>@NatureChannel</strong>
+          </div>
+
+          <button class="subscribe-btn">
+            Subscribe
+          </button>
+        </div>
+
+        <div class="video-desc">
+          Beautiful relaxing nature short video 🌿  
+          Watch more amazing content only on ZABTUBE 🔥
+        </div>
+
+      </div>
+
+      <div class="right-actions">
+
+        <div class="action">
+          <div class="action-icon">👍</div>
+          <span>125K</span>
+        </div>
+
+        <div class="action">
+          <div class="action-icon">💬</div>
+          <span>4.2K</span>
+        </div>
+
+        <div class="action">
+          <div class="action-icon">🔁</div>
+          <span>Share</span>
+        </div>
+
+        <div class="action">
+          <div class="action-icon">⋮</div>
+          <span>More</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
