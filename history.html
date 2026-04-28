@@ -97,6 +97,12 @@ header{
   display:flex;
   gap:18px;
   align-items:flex-start;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.history-card:hover{
+  transform:translateY(-4px);
 }
 
 .thumb{
@@ -126,6 +132,17 @@ header{
 .desc{
   color:#ccc;
   line-height:1.7;
+}
+
+.empty-box{
+  text-align:center;
+  padding:70px 20px;
+  background:#181818;
+  border-radius:20px;
+}
+
+.empty-box h2{
+  margin-bottom:10px;
 }
 
 @media(max-width:850px){
@@ -171,11 +188,12 @@ Clear History
 
 <div class="history-list" id="historyList">
 
-<div class="history-card">
+<div class="history-card"
+onclick="window.location.href='video.html'">
+
   <img
   class="thumb"
-  src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg"
-  >
+  src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg">
 
   <div class="history-content">
     <h3>Featured Demo Video Full HD Quality</h3>
@@ -190,11 +208,12 @@ Clear History
   </div>
 </div>
 
-<div class="history-card">
+<div class="history-card"
+onclick="window.location.href='video.html'">
+
   <img
   class="thumb"
-  src="https://i.ytimg.com/vi/ysz5S6PUM-U/hqdefault.jpg"
-  >
+  src="https://i.ytimg.com/vi/ysz5S6PUM-U/hqdefault.jpg">
 
   <div class="history-content">
     <h3>Beautiful Nature Relaxing Video</h3>
@@ -209,11 +228,12 @@ Clear History
   </div>
 </div>
 
-<div class="history-card">
+<div class="history-card"
+onclick="window.location.href='video.html'">
+
   <img
   class="thumb"
-  src="https://i.ytimg.com/vi/jNQXAC9IVRw/hqdefault.jpg"
-  >
+  src="https://i.ytimg.com/vi/jNQXAC9IVRw/hqdefault.jpg">
 
   <div class="history-content">
     <h3>Classic Public Library Video</h3>
@@ -238,9 +258,8 @@ function clearHistory() {
     document.getElementById("historyList");
 
   historyList.innerHTML = `
-    <div style="text-align:center; padding:60px;">
+    <div class="empty-box">
       <h2>No Watch History Found</h2>
-      <br>
       <p>Your watch history has been cleared successfully 🔥</p>
     </div>
   `;
