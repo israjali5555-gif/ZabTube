@@ -7,65 +7,69 @@ function searchVideo() {
     return;
   }
 
-  alert("Searching for: " + query);
-
   const container = document.getElementById("videoContainer");
-
-  if (!container) return;
-
-  container.innerHTML = `
-    <div class="card" onclick="window.location.href='video.html'">
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-      <div class="card-content">
-        <h3>${query} - Search Result Video</h3>
-        <div class="meta">ZABTUBE Search • Live Result</div>
-      </div>
-    </div>
-
-    <div class="card" onclick="window.location.href='video.html'">
-      <iframe src="https://www.youtube.com/embed/ysz5S6PUM-U" allowfullscreen></iframe>
-      <div class="card-content">
-        <h3>${query} - Trending Video</h3>
-        <div class="meta">Trending Channel • Popular</div>
-      </div>
-    </div>
-
-    <div class="card" onclick="window.location.href='video.html'">
-      <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw" allowfullscreen></iframe>
-      <div class="card-content">
-        <h3>${query} - Recommended Video</h3>
-        <div class="meta">Recommended • Global Feed</div>
-      </div>
-    </div>
-  `;
-}
-
-const demoVideos = [
-  {
-    title: "Featured Video Demo",
-    channel: "Demo Channel",
-    embed: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-  },
-  {
-    title: "Beautiful Nature Video",
-    channel: "Nature Channel",
-    embed: "https://www.youtube.com/embed/ysz5S6PUM-U"
-  },
-  {
-    title: "Classic Public Video",
-    channel: "Open Library",
-    embed: "https://www.youtube.com/embed/jNQXAC9IVRw"
-  }
-];
-
-function loadVideos() {
-  const container = document.getElementById("videoContainer");
-
   if (!container) return;
 
   container.innerHTML = "";
 
-  demoVideos.forEach(video => {
+  const searchResults = [
+    {
+      title: query + " - Trending Video",
+      channel: "ZABTUBE Search",
+      thumb: "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+      views: "2.1M views • Today",
+      time: "10:25"
+    },
+    {
+      title: query + " - Recommended Video",
+      channel: "Recommended Channel",
+      thumb: "https://i.ytimg.com/vi/ysz5S6PUM-U/hqdefault.jpg",
+      views: "980K views • This Week",
+      time: "08:40"
+    },
+    {
+      title: query + " - Global Feed",
+      channel: "Global Videos",
+      thumb: "https://i.ytimg.com/vi/jNQXAC9IVRw/hqdefault.jpg",
+      views: "4.7M views • Popular",
+      time: "12:14"
+    }
+  ];
+
+  renderVideos(searchResults);
+}
+
+const demoVideos = [
+  {
+    title: "Featured Demo Video Full HD Quality",
+    channel: "Demo Channel",
+    thumb: "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+    views: "2.1M views • 2 days ago",
+    time: "10:25"
+  },
+  {
+    title: "Beautiful Nature Relaxing Video",
+    channel: "Nature Channel",
+    thumb: "https://i.ytimg.com/vi/ysz5S6PUM-U/hqdefault.jpg",
+    views: "980K views • 1 week ago",
+    time: "08:40"
+  },
+  {
+    title: "Classic Public Library Video",
+    channel: "Open Library",
+    thumb: "https://i.ytimg.com/vi/jNQXAC9IVRw/hqdefault.jpg",
+    views: "4.7M views • 5 days ago",
+    time: "12:14"
+  }
+];
+
+function renderVideos(videos) {
+  const container = document.getElementById("videoContainer");
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  videos.forEach(video => {
     const card = document.createElement("div");
     card.className = "card";
     card.onclick = function () {
@@ -73,10 +77,21 @@ function loadVideos() {
     };
 
     card.innerHTML = `
-      <iframe src="${video.embed}" allowfullscreen></iframe>
+      <div class="thumbnail">
+        <img src="${video.thumb}">
+        <div class="duration">${video.time}</div>
+      </div>
+
       <div class="card-content">
-        <h3>${video.title}</h3>
-        <div class="meta">${video.channel} • Free Video Library</div>
+        <img class="channel-img" src="https://i.pravatar.cc/100?img=5">
+
+        <div class="video-info">
+          <h3>${video.title}</h3>
+          <div class="meta">
+            ${video.channel}<br>
+            ${video.views}
+          </div>
+        </div>
       </div>
     `;
 
@@ -85,5 +100,5 @@ function loadVideos() {
 }
 
 window.onload = function () {
-  loadVideos();
+  renderVideos(demoVideos);
 };
