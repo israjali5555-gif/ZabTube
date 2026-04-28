@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZABTUBE Notifications</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#0f0f0f;
+  color:#fff;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:#0f0f0f;
+  border-bottom:1px solid #222;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:24px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.logo span{
+  color:#ff0000;
+}
+
+.page{
+  max-width:900px;
+  margin:auto;
+  padding:25px 20px;
+}
+
+.page-title{
+  font-size:28px;
+  font-weight:700;
+  margin-bottom:25px;
+}
+
+.notification-list{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.notification-card{
+  background:#181818;
+  border-radius:18px;
+  padding:18px;
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+  transition:.3s;
+}
+
+.notification-card:hover{
+  background:#202020;
+}
+
+.notify-img{
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.notify-content{
+  flex:1;
+}
+
+.notify-content h3{
+  font-size:16px;
+  margin-bottom:8px;
+}
+
+.notify-content p{
+  color:#bbb;
+  line-height:1.6;
+  font-size:14px;
+}
+
+.notify-time{
+  color:#888;
+  font-size:12px;
+  margin-top:8px;
+}
+
+.notify-thumb{
+  width:130px;
+  height:75px;
+  border-radius:12px;
+  object-fit:cover;
+}
+
+.bottom-nav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#111;
+  border-top:1px solid #222;
+  display:flex;
+  justify-content:space-around;
+  padding:10px 0;
+}
+
+.nav-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  font-size:12px;
+  cursor:pointer;
+}
+
+@media(max-width:768px){
+  .notification-card{
+    flex-direction:column;
+  }
+
+  .notify-thumb{
+    width:100%;
+    height:auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo" onclick="window.location.href='index.html'">
+    <span>▶</span> ZABTUBE
+  </div>
+</header>
+
+<div class="page">
+
+<div class="page-title">
+🔔 Notifications
+</div>
+
+<div class="notification-list">
+
+<div class="notification-card">
+  <img class="notify-img" src="https://i.pravatar.cc/100?img=4">
+
+  <div class="notify-content">
+    <h3>Nature Channel uploaded a new video</h3>
+    <p>
+      Beautiful Nature Relaxing Video is now live on ZABTUBE 🔥
+    </p>
+    <div class="notify-time">2 hours ago</div>
+  </div>
+
+  <img class="notify-thumb" src="https://i.ytimg.com/vi/ysz5S6PUM-U/hqdefault.jpg">
+</div>
+
+<div class="notification-card">
+  <img class="notify-img" src="https://i.pravatar.cc/100?img=6">
+
+  <div class="notify-content">
+    <h3>New comment on your video</h3>
+    <p>
+      "Amazing UI bro, looks like real YouTube!" ❤️
+    </p>
+    <div class="notify-time">5 hours ago</div>
+  </div>
+
+  <img class="notify-thumb" src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg">
+</div>
+
+<div class="notification-card">
+  <img class="notify-img" src="https://i.pravatar.cc/100?img=8">
+
+  <div class="notify-content">
+    <h3>You got 250 new subscribers</h3>
+    <p>
+      Your ZABTUBE channel is growing fast 🚀
+    </p>
+    <div class="notify-time">1 day ago</div>
+  </div>
+
+  <img class="notify-thumb" src="https://i.ytimg.com/vi/jNQXAC9IVRw/hqdefault.jpg">
+</div>
+
+</div>
+
+</div>
+
+<div class="bottom-nav">
+
+<div class="nav-item" onclick="window.location.href='index.html'">
+🏠
+<span>Home</span>
+</div>
+
+<div class="nav-item" onclick="window.location.href='shorts.html'">
+🎬
+<span>Shorts</span>
+</div>
+
+<div class="nav-item" onclick="window.location.href='upload.html'">
+➕
+<span>Create</span>
+</div>
+
+<div class="nav-item" onclick="window.location.href='channel.html'">
+👤
+<span>You</span>
+</div>
+
+</div>
+
+</body>
+</html>
