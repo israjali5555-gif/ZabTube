@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZABTUBE History</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#0f0f0f;
+  color:#fff;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:#0f0f0f;
+  border-bottom:1px solid #222;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:24px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.logo span{
+  color:#ff0000;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:30px 20px;
+}
+
+.page-title{
+  font-size:30px;
+  font-weight:700;
+  margin-bottom:25px;
+}
+
+.top-actions{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:15px;
+  margin-bottom:30px;
+}
+
+.btn{
+  padding:12px 22px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.clear-btn{
+  background:#ff0000;
+  color:#fff;
+}
+
+.back-btn{
+  background:#fff;
+  color:#111;
+}
+
+.history-list{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.history-card{
+  background:#181818;
+  border-radius:18px;
+  padding:18px;
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+}
+
+.thumb{
+  width:280px;
+  min-width:280px;
+  height:160px;
+  object-fit:cover;
+  border-radius:14px;
+}
+
+.history-content{
+  flex:1;
+}
+
+.history-content h3{
+  font-size:20px;
+  margin-bottom:10px;
+}
+
+.meta{
+  color:#aaa;
+  font-size:14px;
+  line-height:1.7;
+  margin-bottom:10px;
+}
+
+.desc{
+  color:#ccc;
+  line-height:1.7;
+}
+
+@media(max-width:850px){
+  .history-card{
+    flex-direction:column;
+  }
+
+  .thumb{
+    width:100%;
+    min-width:100%;
+    height:auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo" onclick="window.location.href='index.html'">
+    <span>▶</span> ZABTUBE
+  </div>
+</header>
+
+<div class="container">
+
+<div class="page-title">
+📜 Watch History
+</div>
+
+<div class="top-actions">
+
+<button class="btn back-btn"
+onclick="window.location.href='index.html'">
+Back Home
+</button>
+
+<button class="btn clear-btn"
+onclick="clearHistory()">
+Clear History
+</button>
+
+</div>
+
+<div class="history-list" id="historyList">
+
+<div class="history-card">
+  <img
+  class="thumb"
+  src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg"
+  >
+
+  <div class="history-content">
+    <h3>Featured Demo Video Full HD Quality</h3>
+
+    <div class="meta">
+      Demo Channel • Watched 2 hours ago • 2.1M views
+    </div>
+
+    <div class="desc">
+      Continue watching your favorite featured premium content on ZABTUBE with full HD quality and creator experience.
+    </div>
+  </div>
+</div>
+
+<div class="history-card">
+  <img
+  class="thumb"
+  src="https://i.ytimg.com/vi/ysz5S6PUM-U/hqdefault.jpg"
+  >
+
+  <div class="history-content">
+    <h3>Beautiful Nature Relaxing Video</h3>
+
+    <div class="meta">
+      Nature Channel • Watched yesterday • 980K views
+    </div>
+
+    <div class="desc">
+      Relaxing nature video with beautiful landscapes and peaceful cinematic visuals.
+    </div>
+  </div>
+</div>
+
+<div class="history-card">
+  <img
+  class="thumb"
+  src="https://i.ytimg.com/vi/jNQXAC9IVRw/hqdefault.jpg"
+  >
+
+  <div class="history-content">
+    <h3>Classic Public Library Video</h3>
+
+    <div class="meta">
+      Open Library • Watched 3 days ago • 4.7M views
+    </div>
+
+    <div class="desc">
+      Public classic library video content with premium viewing experience on ZABTUBE.
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div>
+
+<script>
+function clearHistory() {
+  const historyList =
+    document.getElementById("historyList");
+
+  historyList.innerHTML = `
+    <div style="text-align:center; padding:60px;">
+      <h2>No Watch History Found</h2>
+      <br>
+      <p>Your watch history has been cleared successfully 🔥</p>
+    </div>
+  `;
+}
+</script>
+
+</body>
+</html>
