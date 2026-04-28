@@ -1,271 +1,333 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VideoTube - YouTube Style App</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZABTUBE - Home</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
 
-    body {
-      background: #0f0f0f;
-      color: white;
-    }
+body{
+  background:#0f0f0f;
+  color:#fff;
+}
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      background: #0f0f0f;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 20px;
-      border-bottom: 1px solid #222;
-    }
+header{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:#0f0f0f;
+  border-bottom:1px solid #222;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 24px;
-      font-weight: 700;
-    }
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:24px;
+  font-weight:700;
+}
 
-    .logo span {
-      color: #ff0000;
-    }
+.logo span{
+  color:#ff0000;
+}
 
-    .search-box {
-      flex: 1;
-      max-width: 600px;
-      margin: 0 20px;
-      display: flex;
-      gap: 10px;
-    }
+.search-box{
+  flex:1;
+  max-width:600px;
+  margin:0 20px;
+  display:flex;
+  gap:10px;
+}
 
-    .search-box input {
-      flex: 1;
-      padding: 12px;
-      border-radius: 30px;
-      border: 1px solid #333;
-      background: #121212;
-      color: white;
-      outline: none;
-    }
+.search-box input{
+  flex:1;
+  padding:12px;
+  border:none;
+  outline:none;
+  border-radius:30px;
+  background:#181818;
+  color:#fff;
+  border:1px solid #333;
+}
 
-    .btn {
-      padding: 12px 18px;
-      border: none;
-      border-radius: 30px;
-      background: #ff0000;
-      color: white;
-      cursor: pointer;
-      font-weight: 600;
-    }
+.btn{
+  padding:12px 18px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:600;
+}
 
-    .login-btn {
-      background: #ffffff;
-      color: #111;
-    }
+.login-btn{
+  background:#fff;
+  color:#111;
+}
 
-    .container {
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      min-height: calc(100vh - 70px);
-    }
+.profile-box{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
 
-    aside {
-      background: #111;
-      padding: 20px;
-      border-right: 1px solid #222;
-    }
+.profile-img{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid #333;
+}
 
-    aside ul {
-      list-style: none;
-    }
+.container{
+  display:grid;
+  grid-template-columns:240px 1fr;
+  min-height:calc(100vh - 70px);
+}
 
-    aside li {
-      padding: 14px;
-      border-radius: 12px;
-      cursor: pointer;
-      margin-bottom: 8px;
-      transition: 0.3s;
-    }
+aside{
+  background:#111;
+  border-right:1px solid #222;
+  padding:20px;
+}
 
-    aside li:hover {
-      background: #222;
-    }
+aside ul{
+  list-style:none;
+}
 
-    main {
-      padding: 20px;
-    }
+aside li{
+  padding:14px;
+  border-radius:12px;
+  margin-bottom:8px;
+  cursor:pointer;
+  transition:.3s;
+}
 
-    #user-info {
-      background: #181818;
-      padding: 15px;
-      border-radius: 14px;
-      margin-bottom: 20px;
-      min-height: 100px;
-    }
+aside li:hover{
+  background:#222;
+}
 
-    .categories {
-      display: flex;
-      gap: 10px;
-      overflow-x: auto;
-      margin-bottom: 20px;
-    }
+main{
+  padding:20px;
+}
 
-    .chip {
-      background: #222;
-      padding: 10px 18px;
-      border-radius: 12px;
-      white-space: nowrap;
-      cursor: pointer;
-    }
+.categories{
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  margin-bottom:20px;
+}
 
-    .videos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 20px;
-    }
+.chip{
+  background:#222;
+  padding:10px 18px;
+  border-radius:12px;
+  white-space:nowrap;
+  cursor:pointer;
+}
 
-    .card {
-      background: #181818;
-      border-radius: 18px;
-      overflow: hidden;
-      transition: 0.3s;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    }
+.videos{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:22px;
+}
 
-    .card:hover {
-      transform: translateY(-4px);
-    }
+.card{
+  cursor:pointer;
+}
 
-    iframe {
-      width: 100%;
-      height: 220px;
-      border: none;
-    }
+.thumbnail{
+  position:relative;
+  border-radius:18px;
+  overflow:hidden;
+}
 
-    .card-content {
-      padding: 14px;
-    }
+.thumbnail img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+}
 
-    .card-content h3 {
-      font-size: 16px;
-      margin-bottom: 8px;
-    }
+.duration{
+  position:absolute;
+  bottom:10px;
+  right:10px;
+  background:rgba(0,0,0,.8);
+  padding:4px 8px;
+  border-radius:8px;
+  font-size:12px;
+  font-weight:600;
+}
 
-    .meta {
-      color: #aaa;
-      font-size: 14px;
-    }
+.card-content{
+  display:flex;
+  gap:12px;
+  margin-top:12px;
+}
 
-    @media (max-width: 900px) {
-      .container {
-        grid-template-columns: 1fr;
-      }
+.channel-img{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  object-fit:cover;
+}
 
-      aside {
-        display: none;
-      }
+.video-info h3{
+  font-size:15px;
+  margin-bottom:6px;
+}
 
-      .search-box {
-        display: none;
-      }
-    }
-  </style>
+.meta{
+  color:#aaa;
+  font-size:13px;
+  line-height:1.5;
+}
+
+#user-info{
+  background:#181818;
+  padding:16px;
+  border-radius:18px;
+  margin-bottom:20px;
+}
+
+.logout-btn{
+  margin-top:10px;
+  background:#ff0000;
+  color:#fff;
+}
+
+@media(max-width:900px){
+  .container{
+    grid-template-columns:1fr;
+  }
+
+  aside{
+    display:none;
+  }
+
+  .search-box{
+    display:none;
+  }
+}
+</style>
 </head>
-
 <body>
 
 <header>
-  <div class="logo">
-    <span>▶</span> VideoTube
-  </div>
 
-  <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Search videos...">
+<div class="logo">
+  <span>▶</span> ZABTUBE
+</div>
 
-    <button class="btn login-btn" onclick="signInWithGoogle()">
-      Google Login
-    </button>
-  </div>
+<div class="search-box">
+  <input type="text" placeholder="Search videos...">
+  <button class="btn login-btn" onclick="signInWithGoogle()">
+    Google Login
+  </button>
+</div>
+
 </header>
 
 <div class="container">
 
-  <aside>
-    <ul>
-      <li>🏠 Home</li>
-      <li>🔥 Trending</li>
-      <li>🎵 Music</li>
-      <li>🎬 Movies</li>
-      <li>📺 Subscriptions</li>
-      <li>📚 Library</li>
-      <li>⏱ Watch Later</li>
-      <li>👍 Liked Videos</li>
-    </ul>
-  </aside>
+<aside>
+<ul>
+<li>🏠 Home</li>
+<li>🔥 Trending</li>
+<li>🎵 Music</li>
+<li>🎬 Movies</li>
+<li>📺 Subscriptions</li>
+<li>📚 Library</li>
+<li>⏱ Watch Later</li>
+<li>👍 Liked Videos</li>
+<li>🎬 Shorts</li>
+</ul>
+</aside>
 
-  <main>
+<main>
 
-    <div id="user-info">
-      <h3>Please Login With Google</h3>
-      <br>
-      <button class="btn login-btn" onclick="signInWithGoogle()">
-        Google Login
-      </button>
-    </div>
+<div id="user-info">
+  <h3>Please Login With Google</h3>
+</div>
 
-    <div class="categories">
-      <div class="chip">All</div>
-      <div class="chip">Music</div>
-      <div class="chip">Gaming</div>
-      <div class="chip">Movies</div>
-      <div class="chip">News</div>
-      <div class="chip">Live</div>
-      <div class="chip">Education</div>
-    </div>
+<div class="categories">
+<div class="chip">All</div>
+<div class="chip">Music</div>
+<div class="chip">Gaming</div>
+<div class="chip">Movies</div>
+<div class="chip">Live</div>
+<div class="chip">Education</div>
+<div class="chip">News</div>
+</div>
 
-    <div class="videos">
+<div class="videos">
 
-      <div class="card">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-        <div class="card-content">
-          <h3>Featured Video Demo</h3>
-          <div class="meta">Free Library Video • Demo Channel</div>
-        </div>
+<div class="card" onclick="window.location.href='video.html'">
+  <div class="thumbnail">
+    <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg">
+    <div class="duration">10:25</div>
+  </div>
+
+  <div class="card-content">
+    <img class="channel-img" src="https://i.pravatar.cc/100?img=1">
+    <div class="video-info">
+      <h3>Featured Demo Video Full HD Quality</h3>
+      <div class="meta">
+        Demo Channel • 2.1M views • 2 days ago
       </div>
-
-      <div class="card">
-        <iframe src="https://www.youtube.com/embed/ysz5S6PUM-U" allowfullscreen></iframe>
-        <div class="card-content">
-          <h3>Beautiful Nature Video</h3>
-          <div class="meta">Nature Channel • HD Quality</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw" allowfullscreen></iframe>
-        <div class="card-content">
-          <h3>Classic Public Video</h3>
-          <div class="meta">Open Library • Public Content</div>
-        </div>
-      </div>
-
     </div>
+  </div>
+</div>
 
-  </main>
+<div class="card" onclick="window.location.href='video.html'">
+  <div class="thumbnail">
+    <img src="https://i.ytimg.com/vi/ysz5S6PUM-U/hqdefault.jpg">
+    <div class="duration">08:40</div>
+  </div>
+
+  <div class="card-content">
+    <img class="channel-img" src="https://i.pravatar.cc/100?img=2">
+    <div class="video-info">
+      <h3>Beautiful Nature Relaxing Video</h3>
+      <div class="meta">
+        Nature Channel • 980K views • 1 week ago
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card" onclick="window.location.href='video.html'">
+  <div class="thumbnail">
+    <img src="https://i.ytimg.com/vi/jNQXAC9IVRw/hqdefault.jpg">
+    <div class="duration">12:14</div>
+  </div>
+
+  <div class="card-content">
+    <img class="channel-img" src="https://i.pravatar.cc/100?img=3">
+    <div class="video-info">
+      <h3>Classic Public Library Video</h3>
+      <div class="meta">
+        Open Library • 4.7M views • 5 days ago
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</main>
 </div>
 
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
@@ -281,38 +343,18 @@ window.onload = function () {
 
     if (user) {
       userBox.innerHTML = `
-        <div style="display:flex;align-items:center;gap:15px;flex-wrap:wrap;">
-
-          <img
-            src="${user.photoURL}"
-            alt="Profile"
-            style="
-              width:60px;
-              height:60px;
-              border-radius:50%;
-              object-fit:cover;
-              border:2px solid white;
-            "
-          >
-
+        <div class="profile-box">
+          <img class="profile-img" src="${user.photoURL}">
           <div>
             <h2>Welcome, ${user.displayName}</h2>
             <p>${user.email}</p>
+            <button class="btn logout-btn" onclick="logoutUser()">Logout</button>
           </div>
-
-          <button class="btn" onclick="logoutUser()">
-            Logout
-          </button>
-
         </div>
       `;
     } else {
       userBox.innerHTML = `
         <h3>Please Login With Google</h3>
-        <br>
-        <button class="btn login-btn" onclick="signInWithGoogle()">
-          Google Login
-        </button>
       `;
     }
   });
