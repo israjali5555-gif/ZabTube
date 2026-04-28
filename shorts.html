@@ -32,18 +32,42 @@ body{
 
 .video-box{
   position:relative;
-  width:380px;
+  width:420px;
   max-width:100%;
   height:100vh;
   overflow:hidden;
+  background:#000;
 }
 
-.video-box video,
 .video-box iframe{
   width:100%;
   height:100%;
-  object-fit:cover;
   border:none;
+  object-fit:cover;
+}
+
+.top-bar{
+  position:absolute;
+  top:20px;
+  left:20px;
+  z-index:999;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.back-btn{
+  font-size:28px;
+  cursor:pointer;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:700;
+}
+
+.logo span{
+  color:#ff0000;
 }
 
 .overlay{
@@ -57,25 +81,25 @@ body{
 }
 
 .left-info{
-  max-width:70%;
+  width:70%;
 }
 
 .channel-row{
   display:flex;
   align-items:center;
   gap:12px;
-  margin-bottom:12px;
+  margin-bottom:14px;
 }
 
 .channel-row img{
-  width:42px;
-  height:42px;
+  width:46px;
+  height:46px;
   border-radius:50%;
   object-fit:cover;
 }
 
 .subscribe-btn{
-  padding:8px 16px;
+  padding:8px 18px;
   border:none;
   border-radius:30px;
   background:#fff;
@@ -86,7 +110,13 @@ body{
 
 .video-desc{
   font-size:14px;
-  line-height:1.6;
+  line-height:1.7;
+}
+
+.music-line{
+  margin-top:10px;
+  font-size:13px;
+  color:#ddd;
 }
 
 .right-actions{
@@ -102,48 +132,50 @@ body{
 }
 
 .action-icon{
-  width:52px;
-  height:52px;
+  width:56px;
+  height:56px;
   border-radius:50%;
   background:rgba(255,255,255,0.15);
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:22px;
+  font-size:24px;
   margin-bottom:6px;
+  backdrop-filter:blur(6px);
 }
 
 .action span{
   font-size:12px;
 }
 
-.top-bar{
+.bottom-nav{
   position:absolute;
-  top:20px;
-  left:20px;
-  z-index:999;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:rgba(0,0,0,0.7);
+  border-top:1px solid rgba(255,255,255,0.1);
   display:flex;
+  justify-content:space-around;
+  padding:10px 0;
+  z-index:999;
+}
+
+.nav-item{
+  display:flex;
+  flex-direction:column;
   align-items:center;
-  gap:12px;
-}
-
-.back-btn{
-  font-size:24px;
+  font-size:12px;
   cursor:pointer;
-}
-
-.logo{
-  font-size:22px;
-  font-weight:700;
-}
-
-.logo span{
-  color:#ff0000;
 }
 
 @media(max-width:500px){
   .video-box{
     width:100%;
+  }
+
+  .left-info{
+    width:65%;
   }
 }
 </style>
@@ -162,64 +194,96 @@ body{
 
 <div class="shorts-container">
 
-  <div class="video-box">
+<div class="video-box">
 
-    <iframe 
-      src="https://www.youtube.com/embed/ysz5S6PUM-U?autoplay=1&mute=1"
-      allowfullscreen>
-    </iframe>
+<iframe
+src="https://www.youtube.com/embed/ysz5S6PUM-U?autoplay=1&mute=1&controls=0&loop=1"
+allowfullscreen>
+</iframe>
 
-    <div class="overlay">
+<div class="overlay">
 
-      <div class="left-info">
+<div class="left-info">
 
-        <div class="channel-row">
-          <img src="https://i.pravatar.cc/100?img=4">
+<div class="channel-row">
+<img src="https://i.pravatar.cc/100?img=4">
 
-          <div>
-            <strong>@NatureChannel</strong>
-          </div>
+<div>
+<strong>@NatureChannel</strong>
+</div>
 
-          <button class="subscribe-btn">
-            Subscribe
-          </button>
-        </div>
+<button class="subscribe-btn">
+Subscribe
+</button>
+</div>
 
-        <div class="video-desc">
-          Beautiful relaxing nature short video 🌿  
-          Watch more amazing content only on ZABTUBE 🔥
-        </div>
+<div class="video-desc">
+Beautiful relaxing nature short video 🌿  
+Watch premium Shorts content only on ZABTUBE 🔥
+</div>
 
-      </div>
+<div class="music-line">
+🎵 Original Audio - Nature Vibes
+</div>
 
-      <div class="right-actions">
+</div>
 
-        <div class="action">
-          <div class="action-icon">👍</div>
-          <span>125K</span>
-        </div>
+<div class="right-actions">
 
-        <div class="action">
-          <div class="action-icon">💬</div>
-          <span>4.2K</span>
-        </div>
+<div class="action">
+<div class="action-icon">👍</div>
+<span>125K</span>
+</div>
 
-        <div class="action">
-          <div class="action-icon">🔁</div>
-          <span>Share</span>
-        </div>
+<div class="action">
+<div class="action-icon">💬</div>
+<span>4.2K</span>
+</div>
 
-        <div class="action">
-          <div class="action-icon">⋮</div>
-          <span>More</span>
-        </div>
+<div class="action">
+<div class="action-icon">🔁</div>
+<span>Share</span>
+</div>
 
-      </div>
+<div class="action">
+<div class="action-icon">❤️</div>
+<span>Save</span>
+</div>
 
-    </div>
+<div class="action">
+<div class="action-icon">⋮</div>
+<span>More</span>
+</div>
 
-  </div>
+</div>
 
+</div>
+
+<div class="bottom-nav">
+
+<div class="nav-item" onclick="window.location.href='index.html'">
+🏠
+<span>Home</span>
+</div>
+
+<div class="nav-item">
+🎬
+<span>Shorts</span>
+</div>
+
+<div class="nav-item" onclick="window.location.href='upload.html'">
+➕
+<span>Create</span>
+</div>
+
+<div class="nav-item" onclick="window.location.href='channel.html'">
+👤
+<span>You</span>
+</div>
+
+</div>
+
+</div>
 </div>
 
 </body>
