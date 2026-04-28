@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZABTUBE Channel</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#0f0f0f;
+  color:#fff;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:#0f0f0f;
+  border-bottom:1px solid #222;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:24px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.logo span{
+  color:#ff0000;
+}
+
+.banner{
+  width:100%;
+  height:240px;
+  background:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085') center/cover;
+}
+
+.channel-wrapper{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+}
+
+.channel-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:20px;
+  margin-top:-60px;
+}
+
+.channel-left{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.channel-avatar{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  border:4px solid #0f0f0f;
+  object-fit:cover;
+}
+
+.channel-info h1{
+  font-size:28px;
+  margin-bottom:8px;
+}
+
+.channel-meta{
+  color:#aaa;
+  line-height:1.6;
+}
+
+.subscribe-btn{
+  padding:14px 24px;
+  border:none;
+  border-radius:30px;
+  background:#fff;
+  color:#111;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.tabs{
+  display:flex;
+  gap:20px;
+  margin:30px 0;
+  border-bottom:1px solid #222;
+  padding-bottom:12px;
+  overflow-x:auto;
+}
+
+.tab{
+  cursor:pointer;
+  white-space:nowrap;
+  font-weight:500;
+}
+
+.tab.active{
+  color:#fff;
+  border-bottom:2px solid #fff;
+  padding-bottom:8px;
+}
+
+.section-title{
+  font-size:22px;
+  margin-bottom:20px;
+}
+
+.videos{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:20px;
+}
+
+.card{
+  cursor:pointer;
+}
+
+.thumbnail{
+  border-radius:18px;
+  overflow:hidden;
+  position:relative;
+}
+
+.thumbnail img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  display:block;
+}
+
+.duration{
+  position:absolute;
+  bottom:10px;
+  right:10px;
+  background:rgba(0,0,0,.8);
+  padding:4px 8px;
+  border-radius:8px;
+  font-size:12px;
+}
+
+.card h3{
+  margin-top:12px;
+  font-size:16px;
+}
+
+.meta{
+  margin-top:6px;
+  font-size:13px;
+  color:#aaa;
+}
+
+.about-box{
+  margin-top:40px;
+  background:#181818;
+  padding:20px;
+  border-radius:18px;
+  line-height:1.8;
+  color:#ddd;
+}
+
+@media(max-width:768px){
+  .channel-header{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .channel-left{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .channel-avatar{
+    width:100px;
+    height:100px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo" onclick="window.location.href='index.html'">
+    <span>▶</span> ZABTUBE
+  </div>
+</header>
+
+<div class="banner"></div>
+
+<div class="channel-wrapper">
+
+  <div class="channel-header">
+
+    <div class="channel-left">
+      <img 
+        class="channel-avatar"
+        src="https://i.pravatar.cc/300?img=8"
+      >
+
+      <div class="channel-info">
+        <h1>ZABTUBE Official</h1>
+
+        <div class="channel-meta">
+          @zabtubeofficial <br>
+          2.4M subscribers • 450 videos <br>
+          Premium YouTube-style content platform 🔥
+        </div>
+      </div>
+    </div>
+
+    <button class="subscribe-btn">
+      Subscribe
+    </button>
+
+  </div>
+
+  <div class="tabs">
+    <div class="tab active">Videos</div>
+    <div class="tab">Shorts</div>
+    <div class="tab">Live</div>
+    <div class="tab">Playlists</div>
+    <div class="tab">Community</div>
+    <div class="tab">About</div>
+  </div>
+
+  <div class="section-title">
+    Latest Videos
+  </div>
+
+  <div class="videos">
+
+    <div class="card" onclick="window.location.href='video.html'">
+      <div class="thumbnail">
+        <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg">
+        <div class="duration">10:25</div>
+      </div>
+
+      <h3>Featured Demo Video Full HD</h3>
+      <div class="meta">
+        2.1M views • 2 days ago
+      </div>
+    </div>
+
+    <div class="card" onclick="window.location.href='video.html'">
+      <div class="thumbnail">
+        <img src="https://i.ytimg.com/vi/ysz5S6PUM-U/hqdefault.jpg">
+        <div class="duration">08:40</div>
+      </div>
+
+      <h3>Beautiful Nature Relaxing Video</h3>
+      <div class="meta">
+        980K views • 1 week ago
+      </div>
+    </div>
+
+    <div class="card" onclick="window.location.href='video.html'">
+      <div class="thumbnail">
+        <img src="https://i.ytimg.com/vi/jNQXAC9IVRw/hqdefault.jpg">
+        <div class="duration">12:14</div>
+      </div>
+
+      <h3>Classic Public Library Video</h3>
+      <div class="meta">
+        4.7M views • 5 days ago
+      </div>
+    </div>
+
+  </div>
+
+  <div class="about-box">
+    <h2>About Channel</h2>
+    <br>
+    Welcome to ZABTUBE Official 🔥  
+    This is your professional YouTube-style platform with:
+    Home Page, Video Page, Shorts, Channel Page,
+    Login System, Profile Image, Subscribe Button,
+    Like, Comments, Related Videos and Premium UI.
+
+    <br><br>
+
+    Built for a real modern creator experience.
+  </div>
+
+</div>
+
+</body>
+</html>
