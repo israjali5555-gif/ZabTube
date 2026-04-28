@@ -2,10 +2,12 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZABTUBE - Home</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>ZABTUBE</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -18,26 +20,32 @@
 body{
   background:#0f0f0f;
   color:#fff;
-  padding-bottom:90px;
+  overflow-x:hidden;
 }
+
+/* HEADER */
 
 header{
   position:sticky;
   top:0;
   z-index:999;
   background:#0f0f0f;
-  border-bottom:1px solid #222;
-  padding:14px 18px;
+  padding:14px 16px;
+  border-bottom:1px solid #1f1f1f;
+}
+
+.top-bar{
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:12px;
 }
 
 .logo{
   display:flex;
   align-items:center;
   gap:10px;
-  font-size:24px;
+  font-size:28px;
   font-weight:700;
 }
 
@@ -45,113 +53,110 @@ header{
   color:#ff0000;
 }
 
-.search-box{
-  flex:1;
-  max-width:600px;
-  margin:0 20px;
+.header-icons{
+  display:flex;
+  gap:16px;
+  font-size:22px;
+}
+
+.icon{
+  cursor:pointer;
+}
+
+/* SEARCH */
+
+.search-wrap{
+  margin-top:14px;
   display:flex;
   gap:10px;
 }
 
-.search-box input{
+.search-wrap input{
   flex:1;
-  padding:12px;
+  height:46px;
   border:none;
   outline:none;
   border-radius:30px;
+  padding:0 18px;
   background:#181818;
   color:#fff;
-  border:1px solid #333;
+  font-size:15px;
+  border:1px solid #2a2a2a;
 }
 
-.btn{
-  padding:12px 18px;
+.search-btn{
+  width:52px;
   border:none;
-  border-radius:30px;
+  border-radius:50%;
+  background:#181818;
+  color:#fff;
+  font-size:20px;
   cursor:pointer;
-  font-weight:600;
+  border:1px solid #2a2a2a;
 }
 
-.login-btn{
-  background:#fff;
-  color:#111;
+/* USER BOX */
+
+#user-info{
+  margin:18px 16px;
+  background:#181818;
+  border-radius:18px;
+  padding:18px;
 }
 
 .profile-box{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:14px;
 }
 
 .profile-img{
-  width:42px;
-  height:42px;
+  width:52px;
+  height:52px;
   border-radius:50%;
   object-fit:cover;
-  border:2px solid #333;
 }
 
-.container{
-  display:grid;
-  grid-template-columns:240px 1fr;
-  min-height:calc(100vh - 70px);
-}
-
-aside{
-  background:#111;
-  border-right:1px solid #222;
-  padding:20px;
-}
-
-aside ul{
-  list-style:none;
-}
-
-aside li{
-  padding:14px;
-  border-radius:12px;
-  margin-bottom:8px;
+.logout-btn{
+  margin-top:8px;
+  padding:10px 18px;
+  border:none;
+  border-radius:30px;
+  background:#ff0000;
+  color:#fff;
+  font-weight:600;
   cursor:pointer;
-  transition:.3s;
 }
 
-aside li:hover{
-  background:#222;
-}
-
-main{
-  padding:20px;
-}
-
-#user-info{
-  background:#181818;
-  padding:16px;
-  border-radius:18px;
-  margin-bottom:20px;
-}
+/* CATEGORY */
 
 .categories{
   display:flex;
   gap:10px;
   overflow-x:auto;
-  margin-bottom:20px;
+  padding:0 16px 10px;
+}
+
+.categories::-webkit-scrollbar{
+  display:none;
 }
 
 .chip{
-  background:#222;
-  padding:10px 18px;
+  min-width:max-content;
+  padding:10px 16px;
+  background:#1f1f1f;
   border-radius:12px;
-  white-space:nowrap;
-  cursor:pointer;
+  font-size:14px;
 }
 
+/* VIDEOS */
+
 .videos{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:22px;
+  padding:0 16px 100px;
 }
 
 .card{
+  margin-bottom:28px;
   cursor:pointer;
 }
 
@@ -163,16 +168,16 @@ main{
 
 .thumbnail img{
   width:100%;
-  height:220px;
+  height:210px;
   object-fit:cover;
   display:block;
 }
 
 .duration{
   position:absolute;
-  bottom:10px;
   right:10px;
-  background:rgba(0,0,0,.8);
+  bottom:10px;
+  background:rgba(0,0,0,0.8);
   padding:4px 8px;
   border-radius:8px;
   font-size:12px;
@@ -193,31 +198,27 @@ main{
 }
 
 .video-info h3{
-  font-size:15px;
-  margin-bottom:6px;
+  font-size:16px;
+  font-weight:600;
+  line-height:1.4;
 }
 
 .meta{
-  color:#aaa;
+  margin-top:6px;
   font-size:13px;
+  color:#aaaaaa;
   line-height:1.5;
 }
 
-.logout-btn{
-  margin-top:10px;
-  background:#ff0000;
-  color:#fff;
-}
-
-/* Bottom Navigation */
+/* BOTTOM NAV */
 
 .bottom-nav{
   position:fixed;
   bottom:0;
   left:0;
   width:100%;
-  background:#111;
-  border-top:1px solid #222;
+  background:#0f0f0f;
+  border-top:1px solid #1f1f1f;
   display:flex;
   justify-content:space-around;
   align-items:center;
@@ -226,121 +227,111 @@ main{
 }
 
 .nav-item{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  font-size:13px;
-  cursor:pointer;
+  text-align:center;
+  font-size:12px;
   color:#fff;
+  cursor:pointer;
 }
 
-.add-btn{
-  background:#fff;
-  color:#111;
+.nav-icon{
+  font-size:22px;
+  margin-bottom:4px;
+}
+
+.upload-btn{
   width:52px;
   height:52px;
   border-radius:50%;
+  background:#fff;
+  color:#000;
   display:flex;
   align-items:center;
   justify-content:center;
   font-size:28px;
   font-weight:700;
 }
-
-@media(max-width:900px){
-  .container{
-    grid-template-columns:1fr;
-  }
-
-  aside{
-    display:none;
-  }
-
-  .search-box{
-    display:none;
-  }
-}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">
-    <span>▶</span> ZABTUBE
-  </div>
 
-  <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Search videos...">
-    <button class="btn login-btn" onclick="signInWithGoogle()">
-      Google Login
-    </button>
-  </div>
+<div class="top-bar">
+
+<div class="logo">
+<span>▶</span> ZABTUBE
+</div>
+
+<div class="header-icons">
+<div class="icon">🔔</div>
+<div class="icon">🔍</div>
+</div>
+
+</div>
+
+<div class="search-wrap">
+<input
+type="text"
+id="searchInput"
+placeholder="Search videos...">
+
+<button class="search-btn"
+onclick="searchVideo()">
+⌕
+</button>
+</div>
+
 </header>
 
-<div class="container">
-
-<aside>
-<ul>
-<li onclick="window.location.href='index.html'">🏠 Home</li>
-<li>🔥 Trending</li>
-<li>🎵 Music</li>
-<li>🎬 Movies</li>
-<li>📺 Subscriptions</li>
-<li>📚 Library</li>
-<li>⏱ Watch Later</li>
-<li>👍 Liked Videos</li>
-<li onclick="window.location.href='shorts.html'">🎬 Shorts</li>
-</ul>
-</aside>
-
-<main>
-
 <div id="user-info">
-  <h3>Please Login With Google</h3>
+<h3>Please Login With Google</h3>
 </div>
 
 <div class="categories">
-  <div class="chip">All</div>
-  <div class="chip">Music</div>
-  <div class="chip">Gaming</div>
-  <div class="chip">Movies</div>
-  <div class="chip">Live</div>
-  <div class="chip">Education</div>
-  <div class="chip">News</div>
+<div class="chip">All</div>
+<div class="chip">Music</div>
+<div class="chip">Gaming</div>
+<div class="chip">Movies</div>
+<div class="chip">Live</div>
+<div class="chip">Education</div>
+<div class="chip">News</div>
 </div>
 
 <div class="videos" id="videoContainer">
-</div>
 
-</main>
-</div>
+<!-- script.js se load hoga -->
 
-<!-- Bottom Navigation -->
+</div>
 
 <div class="bottom-nav">
 
-<div class="nav-item" onclick="window.location.href='index.html'">
-🏠
-<span>Home</span>
+<div class="nav-item"
+onclick="window.location.href='index.html'">
+<div class="nav-icon">⌂</div>
+Home
 </div>
 
-<div class="nav-item" onclick="window.location.href='shorts.html'">
-🎬
-<span>Shorts</span>
+<div class="nav-item"
+onclick="window.location.href='shorts.html'">
+<div class="nav-icon">▶</div>
+Shorts
 </div>
 
-<div class="add-btn" onclick="window.location.href='upload.html'">
-+
+<div class="nav-item"
+onclick="window.location.href='upload.html'">
+<div class="upload-btn">+</div>
 </div>
 
-<div class="nav-item">
-📺
-<span>Subs</span>
+<div class="nav-item"
+onclick="window.location.href='subscriptions.html'">
+<div class="nav-icon">▣</div>
+Subs
 </div>
 
-<div class="nav-item" onclick="window.location.href='channel.html'">
-👤
-<span>You</span>
+<div class="nav-item"
+onclick="window.location.href='channel.html'">
+<div class="nav-icon">◉</div>
+You
 </div>
 
 </div>
@@ -351,28 +342,36 @@ main{
 <script src="script.js"></script>
 
 <script>
-firebase.auth().onAuthStateChanged(function(user) {
-  const userBox = document.getElementById("user-info");
+window.onload = function () {
 
-  if (!userBox) return;
+  loadVideos();
 
-  if (user) {
-    userBox.innerHTML = `
-      <div class="profile-box">
-        <img class="profile-img" src="${user.photoURL}">
-        <div>
-          <h2>Welcome, ${user.displayName}</h2>
-          <p>${user.email}</p>
-          <button class="btn logout-btn" onclick="logoutUser()">Logout</button>
+  firebase.auth().onAuthStateChanged(function(user) {
+    const userBox = document.getElementById("user-info");
+
+    if (!userBox) return;
+
+    if (user) {
+      userBox.innerHTML = `
+        <div class="profile-box">
+          <img class="profile-img" src="${user.photoURL}">
+          <div>
+            <h2>${user.displayName}</h2>
+            <p>${user.email}</p>
+            <button class="logout-btn"
+            onclick="logoutUser()">
+            Logout
+            </button>
+          </div>
         </div>
-      </div>
-    `;
-  } else {
-    userBox.innerHTML = `
-      <h3>Please Login With Google</h3>
-    `;
-  }
-});
+      `;
+    } else {
+      userBox.innerHTML = `
+        <h3>Please Login With Google</h3>
+      `;
+    }
+  });
+};
 </script>
 
 </body>
